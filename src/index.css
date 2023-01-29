@@ -11,3 +11,215 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.gradus-right-0{
+  transform: translateY(-50%) rotate(0deg);
+  top: 50%;
+  left:50% ;
+
+}
+
+.gradus-right-15{
+  transform: translateY(-50%) rotate(15deg);
+  top:calc(50% + 20px) ;
+  left:50% ;
+
+}
+
+.gradus-right-30{
+  transform: translateY(-50%) rotate(30deg);
+  top:calc(50% + 40px);
+  left: calc(50% - 10px) ;
+}
+
+.gradus-right-45{
+  transform: translateY(-50%) rotate(45deg);
+  top:calc(50% + 55px);
+  left: calc(50% - 25px) ;
+}
+
+.gradus-right-60{
+  transform: translateY(-50%) rotate(60deg);
+  top:calc(50% + 65px);
+  left: calc(50% - 40px) ;
+}
+
+.gradus-right-75{
+  transform: translateY(-50%) rotate(75deg);
+  top:calc(50% + 75px);
+  left: calc(50% - 60px) ;
+}
+
+.gradus-right-90{
+  transform: translateY(-50%) rotate(90deg);
+  top:calc(50% + 80px);
+  left: calc(50% - 80px) ;
+}
+
+.gradus-right--15{
+  transform: translateY(-50%) rotate(-15deg);
+  top:calc(50% - 20px) ;
+  left:50% ;
+}
+
+.gradus-right--30{
+  transform: translateY(-50%) rotate(-30deg);
+  top:calc(50% - 40px);
+  left: calc(50% - 10px) ;
+}
+
+.gradus-right--45{
+  transform: translateY(-50%) rotate(-45deg);
+  top:calc(50% - 55px);
+  left: calc(50% - 25px) ;
+}
+
+.gradus-right--60{
+  transform: translateY(-50%)  rotate(-60deg);
+  top:calc(50% - 65px);
+  left: calc(50% - 40px) ;
+}
+
+.gradus-right--75{
+  transform: translateY(-50%) rotate(-75deg);
+  top:calc(50% - 75px);
+  left: calc(50% - 60px) ;
+}
+
+.gradus-right--90{
+  transform: translateY(-50%) rotate(-90deg);
+  top:calc(50% - 80px);
+  left: calc(50% - 80px) ;
+}
+
+.build__line--green-gradus{
+  top:calc(50%) !important;
+  left:-25% !important ; 
+}
+
+/* .build__line--green.gradus-right-15{
+  transform: translateY(-50%) rotate(15deg);
+}
+
+.build__line--green.gradus-right-30{
+  transform: translateY(-50%) rotate(30deg);
+}
+
+.build__line--green.gradus-right-45{
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.build__line--green.gradus-right-60{
+  transform: translateY(-50%) rotate(60deg);
+}
+
+.build__line--green.gradus-right-75{
+  transform: translateY(-50%) rotate(75deg);
+}
+
+.build__line--green.gradus-right-90{
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.build__line--green.gradus-right--15{
+  transform: translateY(-50%) rotate(-15deg);
+
+}
+
+.build__line--green.gradus-right--30{
+  transform: translateY(-50%) rotate(-30deg);
+}
+
+.build__line--green.gradus-right--45{
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.build__line--green.gradus-right--60{
+  transform: translateY(-50%) rotate(-60deg);
+}
+
+.build__line--green.gradus-right--75{
+  transform: translateY(-50%) rotate(-75deg);
+}
+
+.build__line--green.gradus-right--90{
+  transform: translateY(-50%) rotate(-90deg);
+} */
+
+.gradus-left-0{
+  transform: translateY(-50%) rotate(180deg);
+  top: 50%;
+  right:50%;
+}
+
+.gradus-left-15{
+  transform: translateY(-50%) rotate(195deg);
+  top:calc(50% - 20px) ;
+  right:50% ;
+}
+
+.gradus-left-30{
+  transform: translateY(-50%) rotate(210deg);
+  top:calc(50% - 40px);
+  right: calc(50% - 10px) ;
+}
+
+.gradus-left-45{
+  transform: translateY(-50%) rotate(225deg);
+  top:calc(50% - 55px);
+  right: calc(50% - 25px) ;
+}
+
+.gradus-left-60{
+  transform: translateY(-50%) rotate(240deg);
+  top:calc(50% - 65px);
+  right: calc(50% - 40px) ;
+}
+
+.gradus-left-75{
+  transform: translateY(-50%) rotate(255deg);
+  top:calc(50% - 75px);
+  right: calc(50% - 60px) ;
+}
+
+.gradus-left-90{
+  transform: translateY(-50%) rotate(270deg);
+  top:calc(50% - 80px);
+  right: calc(50% - 80px) ;
+}
+
+.gradus-left--15{
+  transform: translateY(-50%) rotate(165deg);
+  top:calc(50% + 20px) ;
+  right:50% ;
+}
+
+.gradus-left--30{
+  transform: translateY(-50%) rotate(150deg);
+  top:calc(50% + 40px);
+  right: calc(50% - 10px) ;
+}
+
+.gradus-left--45{
+  transform: translateY(-50%) rotate(135deg);
+  top:calc(50% + 55px);
+  right: calc(50% - 25px) ;
+}
+
+.gradus-left--60{
+  transform: translateY(-50%) rotate(120deg);
+  top:calc(50% + 65px);
+  right: calc(50% - 40px) ;
+}
+
+.gradus-left--75{
+  transform: translateY(-50%) rotate(105deg);
+  top:calc(50% + 75px);
+  right: calc(50% - 60px) ;
+}
+
+.gradus-left--90{
+  transform: translateY(-50%) rotate(90deg);
+  top:calc(50% + 80px);
+  right: calc(50% - 80px) ;
+}

@@ -46,9 +46,8 @@ function App() {
       </div>
       <div className="build">
         <div className="build__area">
-          <div className="build__line build__line--blue"></div>
-          {/* <div className="build__line build__line--green"></div> */}
-          {/* <div className="build__line build__line--red"></div> */}
+          {/* <div className="build__line build__line--green build__line--green-gradus gradus-right-0"></div> */}
+          <div className="build__line build__line--blue gradus-left-45"></div>
         </div>
       </div>
     </div>
