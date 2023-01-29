@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+.dano__row{
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  gap: 20px;
+  justify-content: space-between;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.build__area{
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border: 1px solid silver;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.build__area::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 10px;
+  height: 10px;
+  background: #000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.build__line{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 5px;
+  width: 50%;
+  transform: translateY(-50%);
 }
 
-.App-link {
-  color: #61dafb;
+.build__line::before,.build__line::after{
+  content: '';
+  display: block;
+  position: absolute;
+  left: 100%;
+  width: 40px;
+  height: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.build__line::before{
+  transform: translate(-100%) rotate(20deg);
+  top: -7px;
+ 
+}
+
+.build__line::after{
+  transform: translate(-100%) rotate(-20deg);
+  top: 7px;
+}
+
+.build__line--blue{
+  background: blue;
+}
+
+.build__line--blue::before,.build__line--blue::after{
+  background: blue;
+}
+
+.build__line--red{
+  background: red;
+}
+
+.build__line--red::before,.build__line--red::after{
+  background: red;
+}
+
+.build__line--green{
+  width: 100%;
+  left: 0;
+  background: green;
+}
+
+.build__line--green::before,.build__line--green::after{
+  background: green;
 }
