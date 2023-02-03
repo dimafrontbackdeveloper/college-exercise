@@ -78,8 +78,6 @@ function App() {
     // convert from arr to solution to example
     let example1LeftSide = eval(example1LeftSideArr.join(''));
     let example1RightSide = eval(example1RightSideArr.join(''));
-    // console.log(eval(example1LeftSide));
-    // console.log(eval(example1RightSide));
     solutionToExample1 = [example1LeftSide, ...solutionToExample1, example1RightSide];
     console.log(eval(solutionToExample1));
   };
