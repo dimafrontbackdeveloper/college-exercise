@@ -141,6 +141,10 @@ function App() {
     setBuildAreaFigures((prev) => [...prev, { className }]);
   };
 
+  const deleteFigureToAreaFigures = (className) => {
+    setBuildAreaFigures((prev) => prev.filter((el) => el.className !== className));
+  };
+
   return (
     <div className="App">
       <div className="dano">
@@ -166,7 +170,11 @@ function App() {
         <div className="build__area">
           {/* <div className="build__line build__line--green build__line--green-gradus gradus-right-0"></div> */}
           {buildAreaFigures.map((el) => {
-            return <div className={'build__line' + ' ' + el.className}></div>;
+            return (
+              <div
+                className={'build__line' + ' ' + el.className}
+                onClick={() => deleteFigureToAreaFigures(el.className)}></div>
+            );
           })}
         </div>
         {buildFiguresRows.map((row) => {
