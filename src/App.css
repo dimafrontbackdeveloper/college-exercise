@@ -23,6 +23,7 @@
   height: 320px;
   border: 1px solid silver;
   margin-left: 200px;
+  margin-bottom: 50px;
 }
 
 .build__area::before{
@@ -37,13 +38,34 @@
   background: #000;
 }
 
+.build__figures-row{
+  padding-left: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.build__figures-column{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid silver;
+  margin-right: 50px;
+}
+
+.build__figures-column:last-child{
+  margin-right: 0px;
+}
+
 .build__line{
   position: absolute;
-  /* top: 50%; */
-  /* left: 50%; */
   height: 5px;
   width: 50%;
-  /* transform: translateY(-50%); */
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.build__line:hover{
+  opacity: 0.5;
 }
 
 .build__line::before,.build__line::after{

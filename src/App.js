@@ -10,6 +10,61 @@ function App() {
   const [kronshteinImg, setKronshteinImg] = useState('');
   const [example1, setExample1] = useState('');
   const [rab1Hidden, setRab1Hidden] = useState(null);
+  const [buildFiguresRows, setBuildFiguresRows] = useState([
+    {
+      columns: [
+        {
+          lines: [
+            { className: 'build__line--blue gradus-right-0' },
+            { className: 'build__line--blue gradus-right--15' },
+            { className: 'build__line--blue gradus-right--30' },
+            { className: 'build__line--blue gradus-right--45' },
+            { className: 'build__line--blue gradus-right--60' },
+            { className: 'build__line--blue gradus-right--75' },
+            { className: 'build__line--blue gradus-right--90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--blue gradus-right-0' },
+            { className: 'build__line--blue gradus-right-15' },
+            { className: 'build__line--blue gradus-right-30' },
+            { className: 'build__line--blue gradus-right-45' },
+            { className: 'build__line--blue gradus-right-60' },
+            { className: 'build__line--blue gradus-right-75' },
+            { className: 'build__line--blue gradus-right-90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--blue gradus-left-0' },
+            { className: 'build__line--blue gradus-left-15' },
+            { className: 'build__line--blue gradus-left-30' },
+            { className: 'build__line--blue gradus-left-45' },
+            { className: 'build__line--blue gradus-left-60' },
+            { className: 'build__line--blue gradus-left-75' },
+            { className: 'build__line--blue gradus-left-90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--blue gradus-left-0' },
+            { className: 'build__line--blue gradus-left--15' },
+            { className: 'build__line--blue gradus-left--30' },
+            { className: 'build__line--blue gradus-left--45' },
+            { className: 'build__line--blue gradus-left--60' },
+            { className: 'build__line--blue gradus-left--75' },
+            { className: 'build__line--blue gradus-left--90' },
+          ],
+        },
+      ],
+    },
+  ]);
+  const [buildAreaFigures, setBuildAreaFigures] = useState([
+    // {
+    //   className: 'build__line--blue gradus-left-45',
+    // },
+  ]);
 
   const changeFile = (e) => {
     if (!e.target.files) {
@@ -82,6 +137,10 @@ function App() {
     console.log(eval(solutionToExample1));
   };
 
+  const addFigureToAreaFigures = (className) => {
+    setBuildAreaFigures((prev) => [...prev, { className }]);
+  };
+
   return (
     <div className="App">
       <div className="dano">
@@ -106,8 +165,68 @@ function App() {
       <div className="build">
         <div className="build__area">
           {/* <div className="build__line build__line--green build__line--green-gradus gradus-right-0"></div> */}
-          <div className="build__line build__line--blue gradus-left-45"></div>
+          {buildAreaFigures.map((el) => {
+            return <div className={'build__line' + ' ' + el.className}></div>;
+          })}
         </div>
+        {buildFiguresRows.map((row) => {
+          return (
+            <div className="build__figures-row">
+              {row.columns.map((column) => {
+                return (
+                  <div className="build__figures-column">
+                    {column.lines.map((line) => {
+                      return (
+                        <div
+                          className={'build__line' + ' ' + line.className}
+                          onClick={() => addFigureToAreaFigures(line.className)}></div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+
+        {/* <div className="build__figures-row">
+          <div className="build__figures-column">
+            <div className="build__line build__line--blue gradus-right-0"></div>
+            <div className="build__line build__line--blue gradus-right--15"></div>
+            <div className="build__line build__line--blue gradus-right--30"></div>
+            <div className="build__line build__line--blue gradus-right--45"></div>
+            <div className="build__line build__line--blue gradus-right--60"></div>
+            <div className="build__line build__line--blue gradus-right--75"></div>
+            <div className="build__line build__line--blue gradus-right--90"></div>
+          </div>
+          <div className="build__figures-column">
+            <div className="build__line build__line--blue gradus-right-0"></div>
+            <div className="build__line build__line--blue gradus-right-15"></div>
+            <div className="build__line build__line--blue gradus-right-30"></div>
+            <div className="build__line build__line--blue gradus-right-45"></div>
+            <div className="build__line build__line--blue gradus-right-60"></div>
+            <div className="build__line build__line--blue gradus-right-75"></div>
+            <div className="build__line build__line--blue gradus-right-90"></div>
+          </div>
+          <div className="build__figures-column">
+            <div className="build__line build__line--blue gradus-left-0"></div>
+            <div className="build__line build__line--blue gradus-left--15"></div>
+            <div className="build__line build__line--blue gradus-left--30"></div>
+            <div className="build__line build__line--blue gradus-left--45"></div>
+            <div className="build__line build__line--blue gradus-left--60"></div>
+            <div className="build__line build__line--blue gradus-left--75"></div>
+            <div className="build__line build__line--blue gradus-left--90"></div>
+          </div>
+          <div className="build__figures-column">
+            <div className="build__line build__line--blue gradus-left-0"></div>
+            <div className="build__line build__line--blue gradus-left-15"></div>
+            <div className="build__line build__line--blue gradus-left-30"></div>
+            <div className="build__line build__line--blue gradus-left-45"></div>
+            <div className="build__line build__line--blue gradus-left-60"></div>
+            <div className="build__line build__line--blue gradus-left-75"></div>
+            <div className="build__line build__line--blue gradus-left-90"></div>
+          </div>
+        </div> */}
       </div>
       <div className="examples">
         <p>(1), ΣFx = 0</p>
