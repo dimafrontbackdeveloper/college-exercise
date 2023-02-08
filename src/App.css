@@ -23,7 +23,7 @@
   height: 320px;
   border: 1px solid silver;
   margin-left: 200px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .build__area::before{
@@ -51,6 +51,7 @@
   padding-left: 100px;
   display: flex;
   align-items: center;
+  margin-bottom: 150px;
 }
 
 .build__figures-column{
@@ -114,12 +115,22 @@
 }
 
 .build__line--green{
-  width: 150%;
+  width:125%;
   left: 0;
   background: green;
 }
 
 .build__line--green::before,.build__line--green::after{
   background: green;
+}
+
+.build__line--orange{
+  width:150%;
+  left: 0;
+  background: orange;
+}
+
+.build__line--orange::before,.build__line--orange::after{
+  background: orange;
 }
 

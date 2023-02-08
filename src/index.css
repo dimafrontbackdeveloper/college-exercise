@@ -94,6 +94,11 @@ code {
 
 .build__line--green-gradus{
   top:calc(50%) !important;
+  left:-12.5% !important ; 
+}
+
+.build__line--orange-gradus{
+  top:calc(50%) !important;
   left:-25% !important ; 
 }
 

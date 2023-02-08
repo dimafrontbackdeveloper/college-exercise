@@ -63,6 +63,150 @@ function App() {
         },
       ],
     },
+    {
+      columns: [
+        {
+          lines: [
+            { className: 'build__line--red gradus-right-0' },
+            { className: 'build__line--red gradus-right--15' },
+            { className: 'build__line--red gradus-right--30' },
+            { className: 'build__line--red gradus-right--45' },
+            { className: 'build__line--red gradus-right--60' },
+            { className: 'build__line--red gradus-right--75' },
+            { className: 'build__line--red gradus-right--90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--red gradus-right-0' },
+            { className: 'build__line--red gradus-right-15' },
+            { className: 'build__line--red gradus-right-30' },
+            { className: 'build__line--red gradus-right-45' },
+            { className: 'build__line--red gradus-right-60' },
+            { className: 'build__line--red gradus-right-75' },
+            { className: 'build__line--red gradus-right-90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--red gradus-left-0' },
+            { className: 'build__line--red gradus-left-15' },
+            { className: 'build__line--red gradus-left-30' },
+            { className: 'build__line--red gradus-left-45' },
+            { className: 'build__line--red gradus-left-60' },
+            { className: 'build__line--red gradus-left-75' },
+            { className: 'build__line--red gradus-left-90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--red gradus-left-0' },
+            { className: 'build__line--red gradus-left--15' },
+            { className: 'build__line--red gradus-left--30' },
+            { className: 'build__line--red gradus-left--45' },
+            { className: 'build__line--red gradus-left--60' },
+            { className: 'build__line--red gradus-left--75' },
+            { className: 'build__line--red gradus-left--90' },
+          ],
+        },
+      ],
+    },
+    {
+      columns: [
+        {
+          lines: [
+            { className: 'build__line--green build__line--green-gradus gradus-right-0' },
+            { className: 'build__line--green build__line--green-gradus gradus-right--15' },
+            { className: 'build__line--green build__line--green-gradus gradus-right--30' },
+            { className: 'build__line--green build__line--green-gradus gradus-right--45' },
+            { className: 'build__line--green build__line--green-gradus gradus-right--60' },
+            { className: 'build__line--green build__line--green-gradus gradus-right--75' },
+            { className: 'build__line--green build__line--green-gradus gradus-right--90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--green build__line--green-gradus gradus-right-0' },
+            { className: 'build__line--green build__line--green-gradus gradus-right-15' },
+            { className: 'build__line--green build__line--green-gradus gradus-right-30' },
+            { className: 'build__line--green build__line--green-gradus gradus-right-45' },
+            { className: 'build__line--green build__line--green-gradus gradus-right-60' },
+            { className: 'build__line--green build__line--green-gradus gradus-right-75' },
+            { className: 'build__line--green build__line--green-gradus gradus-right-90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--green build__line--green-gradus gradus-left-0' },
+            { className: 'build__line--green build__line--green-gradus gradus-left-15' },
+            { className: 'build__line--green build__line--green-gradus gradus-left-30' },
+            { className: 'build__line--green build__line--green-gradus gradus-left-45' },
+            { className: 'build__line--green build__line--green-gradus gradus-left-60' },
+            { className: 'build__line--green build__line--green-gradus gradus-left-75' },
+            { className: 'build__line--green build__line--green-gradus gradus-left-90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--green build__line--green-gradus gradus-left-0' },
+            { className: 'build__line--green build__line--green-gradus gradus-left--15' },
+            { className: 'build__line--green build__line--green-gradus gradus-left--30' },
+            { className: 'build__line--green build__line--green-gradus gradus-left--45' },
+            { className: 'build__line--green build__line--green-gradus gradus-left--60' },
+            { className: 'build__line--green build__line--green-gradus gradus-left--75' },
+            { className: 'build__line--green build__line--green-gradus gradus-left--90' },
+          ],
+        },
+      ],
+    },
+    {
+      columns: [
+        {
+          lines: [
+            { className: 'build__line--orange build__line--orange-gradus gradus-right-0' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right--15' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right--30' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right--45' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right--60' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right--75' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right--90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--orange build__line--orange-gradus gradus-right-0' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right-15' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right-30' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right-45' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right-60' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right-75' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-right-90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--orange build__line--orange-gradus gradus-left-0' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left-15' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left-30' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left-45' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left-60' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left-75' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left-90' },
+          ],
+        },
+        {
+          lines: [
+            { className: 'build__line--orange build__line--orange-gradus gradus-left-0' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left--15' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left--30' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left--45' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left--60' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left--75' },
+            { className: 'build__line--orange build__line--orange-gradus gradus-left--90' },
+          ],
+        },
+      ],
+    },
   ]);
   const [buildAreaFigures, setBuildAreaFigures] = useState([]);
   const [buildAreaInputs, setBuildAreaInputs] = useState([
