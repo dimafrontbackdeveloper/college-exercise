@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import kronshtein1 from './assets/kronshtein1.jpg';
 
 function App() {
@@ -9,7 +9,11 @@ function App() {
   const [fileName, setFileName] = useState('Upload your photo');
   const [kronshteinImg, setKronshteinImg] = useState('');
   const [example1, setExample1] = useState('');
-  const [rab1Hidden, setRab1Hidden] = useState(null);
+  const [example2, setExample2] = useState('');
+  const [example3, setExample3] = useState('');
+  const [isRightExample1, setIsRightExample1] = useState(false);
+  const [isRightExample2, setIsRightExample2] = useState(false);
+  const [isRightExample3, setIsRightExample3] = useState(false);
   const [buildFiguresRows, setBuildFiguresRows] = useState([
     {
       columns: [
@@ -60,11 +64,7 @@ function App() {
       ],
     },
   ]);
-  const [buildAreaFigures, setBuildAreaFigures] = useState([
-    // {
-    //   className: 'build__line--blue gradus-left-45',
-    // },
-  ]);
+  const [buildAreaFigures, setBuildAreaFigures] = useState([]);
 
   const changeFile = (e) => {
     if (!e.target.files) {
@@ -76,73 +76,33 @@ function App() {
     console.log(fileName);
   };
 
-  const solveExample1 = () => {
-    const example1LeftSideArr = [];
-    const example1RightSideArr = [];
-    let solutionToExample1 = [];
-    let isPushToLeftSide = true;
-
-    // const newExample1 = [];
-
-    example1.split(' ').forEach((el, i) => {
-      if (
-        el === 'Rab' ||
-        el === 'Rac' ||
-        el === '=' ||
-        (el === '-' && example1.split(' ')[i + 1] === 'Rac') ||
-        (el === '-' && example1.split(' ')[i + 1] === 'Rab') ||
-        (el === '*' && example1.split(' ')[i - 1] === 'Rac') ||
-        (el === '0' && example1.split(' ')[i - 1] === '=')
-      ) {
-        isPushToLeftSide = false;
-
-        if (el !== '=' && example1.split(' ')[i - 1] !== '=') {
-          solutionToExample1.push(el);
-        }
-
-        return;
-      }
-
-      if (isPushToLeftSide) {
-        if (el === 'F1') {
-          example1LeftSideArr.push(f1);
-        } else if (el === 'F2') {
-          example1LeftSideArr.push(f2);
-        } else if (el === 'cos30') {
-          example1LeftSideArr.push(0.867);
-        } else if (el === 'cos60') {
-          example1LeftSideArr.push(0.5);
-        } else {
-          example1LeftSideArr.push(el);
-        }
-      } else {
-        if (el === 'F1') {
-          example1RightSideArr.push(f1);
-        } else if (el === 'F2') {
-          example1RightSideArr.push(f2);
-        } else if (el === 'cos30') {
-          example1RightSideArr.push(0.867);
-        } else if (el === 'cos60') {
-          example1RightSideArr.push(0.5);
-        } else {
-          example1RightSideArr.push(el);
-        }
-      }
-    });
-
-    // convert from arr to solution to example
-    let example1LeftSide = eval(example1LeftSideArr.join(''));
-    let example1RightSide = eval(example1RightSideArr.join(''));
-    solutionToExample1 = [example1LeftSide, ...solutionToExample1, example1RightSide];
-    console.log(eval(solutionToExample1));
-  };
-
   const addFigureToAreaFigures = (className) => {
     setBuildAreaFigures((prev) => [...prev, { className }]);
   };
 
   const deleteFigureToAreaFigures = (className) => {
     setBuildAreaFigures((prev) => prev.filter((el) => el.className !== className));
+  };
+
+  const solveExample1 = () => {
+    if (fileName === 'kronshtein1.jpg' && example1 === 'F2 - Rab - Rac * cos60 = 0') {
+      setIsRightExample1(true);
+    }
+  };
+
+  const solveExample2 = () => {
+    if (fileName === 'kronshtein1.jpg' && example2 === '-Rac * cos30 - F1 = 0') {
+      setIsRightExample2(true);
+    }
+  };
+
+  const solveExample3 = () => {
+    if (
+      fileName === 'kronshtein1.jpg' &&
+      example3 === 'F2 * cos30 - F1 * cos30 - Rac - Rab * cos60 = 0'
+    ) {
+      setIsRightExample3(true);
+    }
   };
 
   return (
@@ -168,7 +128,6 @@ function App() {
       </div>
       <div className="build">
         <div className="build__area">
-          {/* <div className="build__line build__line--green build__line--green-gradus gradus-right-0"></div> */}
           {buildAreaFigures.map((el) => {
             return (
               <div
@@ -196,58 +155,47 @@ function App() {
             </div>
           );
         })}
-
-        {/* <div className="build__figures-row">
-          <div className="build__figures-column">
-            <div className="build__line build__line--blue gradus-right-0"></div>
-            <div className="build__line build__line--blue gradus-right--15"></div>
-            <div className="build__line build__line--blue gradus-right--30"></div>
-            <div className="build__line build__line--blue gradus-right--45"></div>
-            <div className="build__line build__line--blue gradus-right--60"></div>
-            <div className="build__line build__line--blue gradus-right--75"></div>
-            <div className="build__line build__line--blue gradus-right--90"></div>
-          </div>
-          <div className="build__figures-column">
-            <div className="build__line build__line--blue gradus-right-0"></div>
-            <div className="build__line build__line--blue gradus-right-15"></div>
-            <div className="build__line build__line--blue gradus-right-30"></div>
-            <div className="build__line build__line--blue gradus-right-45"></div>
-            <div className="build__line build__line--blue gradus-right-60"></div>
-            <div className="build__line build__line--blue gradus-right-75"></div>
-            <div className="build__line build__line--blue gradus-right-90"></div>
-          </div>
-          <div className="build__figures-column">
-            <div className="build__line build__line--blue gradus-left-0"></div>
-            <div className="build__line build__line--blue gradus-left--15"></div>
-            <div className="build__line build__line--blue gradus-left--30"></div>
-            <div className="build__line build__line--blue gradus-left--45"></div>
-            <div className="build__line build__line--blue gradus-left--60"></div>
-            <div className="build__line build__line--blue gradus-left--75"></div>
-            <div className="build__line build__line--blue gradus-left--90"></div>
-          </div>
-          <div className="build__figures-column">
-            <div className="build__line build__line--blue gradus-left-0"></div>
-            <div className="build__line build__line--blue gradus-left-15"></div>
-            <div className="build__line build__line--blue gradus-left-30"></div>
-            <div className="build__line build__line--blue gradus-left-45"></div>
-            <div className="build__line build__line--blue gradus-left-60"></div>
-            <div className="build__line build__line--blue gradus-left-75"></div>
-            <div className="build__line build__line--blue gradus-left-90"></div>
-          </div>
-        </div> */}
       </div>
       <div className="examples">
-        <p>(1), ΣFx = 0</p>
+        <p>
+          (1), Σ <input type="text" />
+        </p>
         <input
           type="text"
           placeholder="Складаємо рівняння рівноваги"
           value={example1}
           onChange={(e) => {
-            console.log(e.target.value);
             setExample1(e.target.value);
           }}
         />
         <button onClick={solveExample1}>Вирішити</button>
+        <div>{isRightExample1 ? 'Все правильно' : 'Не правильно'}</div>
+        <p>
+          (1), Σ <input type="text" />
+        </p>
+        <input
+          type="text"
+          placeholder="Складаємо рівняння рівноваги"
+          value={example2}
+          onChange={(e) => {
+            setExample2(e.target.value);
+          }}
+        />
+        <button onClick={solveExample2}>Вирішити</button>
+        <div>{isRightExample2 ? 'Все правильно' : 'Не правильно'}</div>
+        <p>
+          (1), Σ <input type="text" />
+        </p>
+        <input
+          type="text"
+          placeholder="Складаємо перевірочне рівняння рівноваги"
+          value={example3}
+          onChange={(e) => {
+            setExample3(e.target.value);
+          }}
+        />
+        <button onClick={solveExample3}>Вирішити</button>
+        <div>{isRightExample3 ? 'Все правильно' : 'Не правильно'}</div>
       </div>
     </div>
   );
