@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import kronshtein1 from './assets/kronshtein1.jpg';
 
 function App() {
@@ -65,6 +65,14 @@ function App() {
     },
   ]);
   const [buildAreaFigures, setBuildAreaFigures] = useState([]);
+  const [buildAreaInputs, setBuildAreaInputs] = useState([
+    {
+      top: 10,
+      left: 20,
+    },
+  ]);
+
+  const buildAreRef = useRef(null);
 
   const changeFile = (e) => {
     if (!e.target.files) {
@@ -105,6 +113,18 @@ function App() {
     }
   };
 
+  const createAreaInput = (e) => {
+    const areaPaddingLeft = 200;
+    const cursorPositionX = e.pageX - areaPaddingLeft;
+    const cursorPositionY = e.pageY - buildAreRef.current.getBoundingClientRect().top;
+
+    setBuildAreaInputs((prev) => [...prev, { left: cursorPositionX, top: cursorPositionY }]);
+  };
+
+  const deleteAreaInput = (top, left) => {
+    setBuildAreaInputs((prev) => prev.filter((el) => el.left !== left && el.top !== top));
+  };
+
   return (
     <div className="App">
       <div className="dano">
@@ -127,12 +147,27 @@ function App() {
         </div>
       </div>
       <div className="build">
-        <div className="build__area">
+        <div className="build__area" onClick={createAreaInput} ref={buildAreRef}>
+          {buildAreaInputs.map((input) => {
+            return (
+              <input
+                style={{ top: input.top, left: input.left }}
+                autoFocus={true}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deleteAreaInput(input.top, input.left);
+                }}
+              />
+            );
+          })}
           {buildAreaFigures.map((el) => {
             return (
               <div
                 className={'build__line' + ' ' + el.className}
-                onClick={() => deleteFigureToAreaFigures(el.className)}></div>
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deleteFigureToAreaFigures(el.className);
+                }}></div>
             );
           })}
         </div>

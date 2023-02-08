@@ -38,6 +38,15 @@
   background: #000;
 }
 
+.build__area input{
+  display: inline-block;
+  position: absolute;
+  transform: translate(-5px,-50%);
+  width: 20px;
+  border: none !important;
+  outline: none !important;
+}
+
 .build__figures-row{
   padding-left: 100px;
   display: flex;
