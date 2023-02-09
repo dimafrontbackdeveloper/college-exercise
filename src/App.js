@@ -209,12 +209,9 @@ function App() {
     },
   ]);
   const [buildAreaFigures, setBuildAreaFigures] = useState([]);
-  const [buildAreaInputs, setBuildAreaInputs] = useState([
-    {
-      top: 10,
-      left: 20,
-    },
-  ]);
+  const [buildAreaInputs, setBuildAreaInputs] = useState([]);
+
+  console.log(buildAreaInputs);
 
   const buildAreRef = useRef(null);
 
@@ -260,13 +257,22 @@ function App() {
   const createAreaInput = (e) => {
     const areaPaddingLeft = 200;
     const cursorPositionX = e.pageX - areaPaddingLeft;
-    const cursorPositionY = e.pageY - buildAreRef.current.getBoundingClientRect().top;
+    const cursorPositionY =
+      e.pageY - buildAreRef.current.getBoundingClientRect().top - window.scrollY;
 
     setBuildAreaInputs((prev) => [...prev, { left: cursorPositionX, top: cursorPositionY }]);
   };
 
   const deleteAreaInput = (top, left) => {
-    setBuildAreaInputs((prev) => prev.filter((el) => el.left !== left && el.top !== top));
+    setBuildAreaInputs((prev) =>
+      prev.map((el) => {
+        if (el?.left !== left && el?.top !== top) {
+          return el;
+        } else {
+          return null;
+        }
+      }),
+    );
   };
 
   return (
@@ -293,16 +299,22 @@ function App() {
       <div className="build">
         <div className="build__area" onClick={createAreaInput} ref={buildAreRef}>
           {buildAreaInputs.map((input) => {
-            return (
-              <input
-                style={{ top: input.top, left: input.left }}
-                autoFocus={true}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  deleteAreaInput(input.top, input.left);
-                }}
-              />
-            );
+            if (input) {
+              console.log(input);
+
+              return (
+                <input
+                  style={{ top: input.top, left: input.left }}
+                  autoFocus={true}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    deleteAreaInput(input.top, input.left);
+                  }}
+                />
+              );
+            } else {
+              return <input style={{ display: 'none' }} />;
+            }
           })}
           {buildAreaFigures.map((el) => {
             return (

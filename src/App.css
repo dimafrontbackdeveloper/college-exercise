@@ -19,8 +19,8 @@
 
 .build__area{
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 800px;
+  height: 800px;
   border: 1px solid silver;
   margin-left: 200px;
   margin-bottom: 100px;
@@ -38,6 +38,14 @@
   background: #000;
 }
 
+.build__area .build__line--green{
+  left:25%;
+}
+
+.build__area .build__line--orange{
+  left:15%;
+}
+
 .build__area input{
   display: inline-block;
   position: absolute;
@@ -45,6 +53,8 @@
   width: 20px;
   border: none !important;
   outline: none !important;
+  z-index: 4;
+
 }
 
 .build__figures-row{
@@ -66,10 +76,20 @@
   margin-right: 0px;
 }
 
+.build__figures-column .build__line--green{
+  width: 100%;
+  left: 0;
+}
+
+.build__figures-column .build__line--orange{
+  width: 100%;
+  left: 0;
+}
+
 .build__line{
   position: absolute;
   height: 5px;
-  width: 50%;
+  width: 160px;
   transition: opacity 0.3s;
   cursor: pointer;
 }
@@ -115,9 +135,10 @@
 }
 
 .build__line--green{
-  width:125%;
+  width:50%;
   left: 0;
   background: green;
+  z-index: 2;
 }
 
 .build__line--green::before,.build__line--green::after{
@@ -125,9 +146,10 @@
 }
 
 .build__line--orange{
-  width:150%;
+  width:70%;
   left: 0;
   background: orange;
+  z-index: 3;
 }
 
 .build__line--orange::before,.build__line--orange::after{
